@@ -1,0 +1,55 @@
+.dog-image {
+    margin: 0 auto;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover; /*VERY IMPORTANT*/
+    border-radius: 1rem 1rem 0 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .dog-image {
+        height: 15rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .dog-image {
+        height: 13rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dog-image {
+        height: 15rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .dog-image {
+        height: 13rem;
+    }
+}
+
+.dog-card {
+    border: 1px solid rgb(218, 223, 218);
+    border-radius: 0 0 1rem 1rem;
+    background-color: white;
+    padding: .5rem 1rem;
+    text-align: center;
+    /*max-width: 30rem;*/
+}
+
+.dog-link {
+    color: rgb(32, 123, 207);
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.dog-link:hover {
+    text-decoration: none;
+    color: rgb(184, 116, 223);
+}
+
+.dog-data {
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+<% flashSuccess.forEach(message => { %>
+    <p class="success-message">
+        <%= message %>
+    </p>
+<% }); %>
+
+<% flashErrors.forEach(error => { %>
+    <p class="failure-message">
+        <%= error %>
+    </p>
+<% }); %>

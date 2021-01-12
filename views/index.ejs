@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/index.css">
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <%- include('./dogs/_filter_bar') %>
+    <div class="container">
+        <%- include('./partials/flashMessages') %>
+        
+        <div class="text-center mt-4">
+            <h4>Currently there <%= dogs.length === 1 ? ' is' : ' are' %> <%= dogs.length %> <%= dogs.length === 1 ? ' dog' : ' dogs' %> to adopt</h4>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <% dogs.forEach(dog => { %>
+                <div class="col-md-5 mb-4">
+                    <div class="dog-data">
+                        <img src="/static/images/dogs/<%= dog.imageName %>" class="dog-image"></img>
+                    </div>
+                    <div class="dog-card">
+                        <a href="/dogs/dog/<%= dog.id %>" class="dog-link"><%= dog.name %>, <%= dog.age %></a>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <script src="/static/frontend_js/index.js"></script>
+    <script src="/static/frontend_js/dogFilter.js"></script>
+</body>
+</html>

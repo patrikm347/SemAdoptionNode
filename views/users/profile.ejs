@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/profile.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <%- include('../partials/flashMessages') %>
+        <div class="d-flex flex-column align-items-center">
+            <h2 class="mt-4">User information</h2>
+            <div class="user-info">
+                <h4>Nickname: <%= observedUser.nickName %></h4>
+                <h4>Name: <%= observedUser.firstName %> <%= observedUser.lastName %></h4>
+                <h4>Gender: <%= observedUser.gender %></h4>
+            </div>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <div class="user-info">
+                <h4>Email: <%= observedUser.contact.email %></h4>
+                <h4>Phone: <%= observedUser.contact.phone %></h4>
+            </div>
+
+            <% if (user && user.id === observedUser.id) { %>
+                <a class="btn btn-primary submit-button mt-4" href="/users/update/<%= user.id %>">Update Profile</a>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

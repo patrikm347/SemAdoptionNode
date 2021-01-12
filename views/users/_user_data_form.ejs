@@ -1,0 +1,43 @@
+<small class="validation-error"><%= errors.firstName %></small>
+<div class="form-group">
+    <label for="firstName">First name: </label><br>
+    <input type="text" class="form-control mb-3" id="firstName" name="firstName" value="<%= newUser.firstName %>" required maxlength="100">
+</div>
+<small class="validation-error"><%= errors.lastName %></small>
+<div class="form-group">
+    <label for="lastName">Last name: </label><br>
+    <input type="text" class="form-control mb-3" id="lastName" name="lastName" value="<%= newUser.lastName %>" required maxlength="100">
+</div>
+<small class="validation-error"><%= errors.nickName %></small>
+<div class="form-group">
+    <label for="nickName">Nick name: </label><br>
+    <input type="text" class="form-control mb-3" id="nickName" name="nickName" value="<%= newUser.nickName %>" required minlength="2" maxlength="50">
+</div>
+<small class="validation-error"><%= errors.email %></small>
+<div class="form-group">
+    <label for="email">Email: </label><br>
+    <input type="email" class="form-control mb-3" id="email" name="email" value="<%= newUser.email %>" required minlength="2" maxlength="50">
+</div>
+<small class="validation-error"><%= errors.phone %></small>
+<div class="form-group">
+    <label for="phone">Phone number: </label><br>
+    <input type="text" class="form-control mb-3" id="phone" name="phone" value="<%= newUser.phone %>" required minlength="2" maxlength="50">
+</div>
+<small class="validation-error"><%= errors.birthday %></small>
+<div class="form-group">
+    <label for="birthday">Birthday: </label><br>
+    <input type="date" class="form-control mb-3" id="birthday" name="birthday" value="<%= newUser.birthday != null && typeof newUser.birthday.getMonth === 'function' ? newUser.birthday.toISOString().split('T')[0] : '' %>"> <!-- typeof finds out if the birthday is Date -->
+</div>
+<small class="validation-error"><%= errors.gender %></small>
+<div class="form-group">
+    <label for="gender">Gender: </label><br>
+    <select class="form-control mb-3" id="gender" name="gender" required>
+        <% if (newUser.gender === 'Female') { %>
+            <option>Male</option>
+            <option selected>Female</option>
+        <% } else { %>
+            <option selected>Male</option>
+            <option>Female</option>
+        <% } %>
+    </select>
+</div>

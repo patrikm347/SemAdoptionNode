@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/profile.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10">
+                <div class="delete-div">
+                    <h1 class="mt-4 mb-4">Are you sure you want to delete <%= dog.name %>?</h1>
+                    <form action="/dogs/delete/<%= dog.id %>?_method=DELETE" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <a href="/dogs/dog/<%= dog.id %>" class="btn btn-primary btn cancel-button">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

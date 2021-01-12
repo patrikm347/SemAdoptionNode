@@ -1,0 +1,58 @@
+.forms {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgb(186, 188, 194);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+}
+
+.already-registered, .register-here {
+    text-decoration: none;
+}
+
+.submit-button, .cancel-button {
+    background-color: rgb(75, 170, 233);
+    border: 1px solid rgb(75, 170, 233);
+}
+
+.submit-button:hover, .cancel-button:hover {
+    background-color: rgb(42, 131, 190);
+    border: 1px solid rgb(42, 131, 190);
+}
+
+.validation-error {
+    color: red;
+}
+
+.title {
+    text-align: center;
+}
+
+.delete-div {
+    text-align: center;
+}
+
+.delete-button {
+    margin-bottom: 2rem;
+    width: 12rem;
+    /*max-width: 15rem;*/
+}
+
+.cancel-button {
+    margin-left: 1rem;
+}
+
+.user-info {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    /*padding-bottom: 0rem;*/
+    border: 1px solid rgb(186, 190, 186);
+    border-radius: 1rem;
+    width: 100%;
+    background-color: white;
+}

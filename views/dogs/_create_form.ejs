@@ -1,0 +1,46 @@
+<small class="validation-error"><%= errors.name %></small>
+<div class="form-group">
+    <label for="name">Name: </label><br>
+    <input type="text" class="form-control mb-3" id="name" name="name" value="<%= dog.name %>" required maxlength="100">
+</div>
+<small class="validation-error"><%= errors.weight %></small>
+<div class="form-group">
+    <label for="weight">Weight: </label><br>
+    <input type="number" class="form-control mb-3" id="weight" name="weight" value="<%= dog.weight %>" required min="0" max="300">
+</div>
+<small class="validation-error"><%= errors.age %></small>
+<div class="form-group">
+    <label for="age">Age: </label><br>
+    <input type="number" class="form-control mb-3" id="age" name="age" value="<%= dog.age %>" required min="0" maxlength="30">
+</div>
+<small class="validation-error"><%= errors.gender %></small>
+<div class="form-group">
+    <label for="gender">Gender: </label><br>
+    <select class="form-control mb-3" id="gender" name="gender" required>
+        <% if (dog.gender === 'Female') { %>
+            <option>Male</option>
+            <option selected>Female</option>
+        <% } else { %>
+            <option selected>Male</option>
+            <option>Female</option>
+        <% } %>
+    </select>
+</div>
+<small class="validation-error"><%= errors.phone %></small>
+<div class="form-group">
+    <label for="description">Description: </label><br>
+    <textarea class="form-control mb-3" id="description" name="description"><%= dog.description %></textarea>
+</div>
+<small class="validation-error"><%= errors.breed %></small>
+<div class="form-group">
+    <label for="breed">Breed: </label><br>
+    <select class="form-control mb-3" id="breed" name="breed" required>
+        <% breeds.forEach(breed => { %>
+            <% if (dog.breed && dog.breed.name === breed.name) { %>
+                <option selected><%= breed.name %></option>
+            <% } else { %>
+                <option><%= breed.name %></option>
+            <% } %>
+        <% }); %>
+    </select>
+</div>

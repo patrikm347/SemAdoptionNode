@@ -1,0 +1,64 @@
+a {
+    text-decoration: none;
+}
+
+.dog-image {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.dog-info, .comment {
+    margin: 1rem 0;
+    /*margin-bottom: 1rem;*/
+    padding: 1.5rem;
+    padding-bottom: 0rem;
+    border: 1px solid rgb(186, 190, 186);
+    border-radius: 1rem;
+    width: 100%;
+    background-color: white;
+}
+
+.update-links {
+    word-spacing: 2rem;
+}
+
+.edit-link, .delete-link {
+    width: 8rem;
+}
+
+hr {
+    /*margin-left: 0;
+    margin-right: 0;*/
+    width: 95%;
+}
+
+.dog-info hr {
+    width: 100%;
+}
+
+.load-comments {
+    margin: 1rem;
+}
+
+.comments-title {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+.comments {
+    display: none;
+    margin-bottom: 3rem;
+}
+
+.comment-area {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+
+.comment-form {
+    text-align: center;
+}

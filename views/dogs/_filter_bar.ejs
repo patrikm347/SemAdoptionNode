@@ -1,0 +1,31 @@
+<div class="filter-bar">
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <label for="breedFilter">Breed:</label>
+                    <select class="form-control breed-filter" id="breedFilter" name="breed">
+                        <option selected>Any</option>
+                        <% breeds.forEach(breed => { %>
+                            <option><%= breed.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <label for="nameFilter">Name:</label>
+                    <input class="form-control name-filter" type="text" id="nameFilter" name="name" placeholder="Name of the dog...">
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <label for="ageFilter" id="ageLabel">Age: 30 or less</label>
+                    <input class="age-filter" type="range" id="ageFilter" name="age" min="0" max="30" value="30">
+                </div>
+
+                <div class="col-md-12 filter-button-div">
+                    <button class="btn btn-primary submit-button" type="submit">Filter dogs</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

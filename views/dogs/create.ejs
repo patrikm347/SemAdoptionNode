@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/profile.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="forms col-xl-4 col-lg-5 col-md-6">
+                <div>
+                    <h3 class="title">Create dog</h4>
+                </div>
+                <form action='/dogs/new' method="POST" enctype="multipart/form-data">
+                    <%- include('_create_form') %>
+
+                    <small class="validation-error"><%= errors.image %></small>
+                    <div class="form-group">
+                        <label for="image">Image: </label><br>
+                        <input type="file" class="form-control mb-3" id="image" name="image">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary submit-button">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

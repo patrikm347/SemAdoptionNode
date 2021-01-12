@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/detail.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <div class="d-flex flex-column align-items-center">
+            <img src="/static/images/dogs/<%= dog.imageName %>" class="dog-image mb-4">
+            <div class="update-links">
+                <% if ((user && user.id == dog.poster) || (user && user.role === 'Admin')) { %>
+                    <a href="/dogs/update/<%= dog.id %>" class="btn btn-primary submit-button edit-link">Edit</a>
+                    <a href="/dogs/delete/<%= dog.id %>" class="btn btn-danger delete-link">Delete</a>
+                <% } %>
+            </div>
+
+            <div class="dog-info">
+                <h3>Poster: <a href="/users/profile/<%= dog.poster.id %>"><%= dog.poster.firstName %> <%= dog.poster.lastName %></a></h3>
+
+                <hr>
+
+                <h4>Name: <%= dog.name %></h4>
+                <h4>Age: <%= dog.age %> years</h4>
+                <h4>Weight: <%= dog.weight %> kg</h4>
+                <h4>Breed: <%= dog.breed.name %></h4>
+                <h4>Gender: <%= dog.gender %></h4>
+                <h4>Description: </h4>
+                <p><%= dog.description %></p>
+            </div>
+
+            <hr>
+
+            <button class="btn btn-primary submit-button load-comments" id="loadComments" data-dog="<%= dog.id %>">Load comments</button>
+
+            <h3 class="comments-title" id="commentsTitle">Comments</h3>
+            <div class="comments w-100" id="comments" data-is-authenticated="<%= isAuthenticated %>">
+                <div class="comment-form">
+                    <form action="" method="POST" id="commentForm" enctype="multipart/form-data">
+                        <textarea class="form-control comment-area" name="comment" placeholder="Type your comment..." rows="4" required id="commentArea"></textarea>
+                        <button type="submit" class="btn btn-primary submit-button mt-3" id="commentButton">Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/frontend_js/detail.js"></script>
+</body>
+</html>
