@@ -2,6 +2,7 @@ const loadButton = document.getElementById('loadComments');
 const commentsTitle = document.getElementById('commentsTitle');
 const commentsDiv = document.getElementById('comments');
 const commentForm = document.getElementById('commentForm');
+const noComments = document.createElement('h4');
 
 function createComment(commentData) {
     const comment = document.createElement('div');
@@ -28,7 +29,6 @@ loadButton.addEventListener('click', () => {
             createComment(comment);
         });
         if (comments.length === 0) {
-            const noComments = document.createElement('h4');
             noComments.innerText = 'There are currently no comments. Write one!';
             noComments.style.marginBottom = '3rem';
             noComments.style.textAlign = 'center';
@@ -40,6 +40,8 @@ loadButton.addEventListener('click', () => {
 
 commentForm.addEventListener('submit', function(event) {
     event.preventDefault();
+
+    noComments.style.display = 'none';
 
     const textAreaComment = document.getElementById('commentArea');
 
