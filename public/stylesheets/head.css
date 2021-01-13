@@ -95,3 +95,25 @@ ul.social-media li {
 .filter-button-div button {
     width: 20%;
 }
+
+.filter-bar {
+    display: none;
+    transition: height 500ms ease;
+    overflow: hidden;
+}
+
+.toggle-filter {
+    text-decoration: none;
+    border-radius: 0 0 20% 20%;
+    color: rgb(75, 170, 233);
+    background-color: white;
+    border-color: rgb(209, 212, 219);
+    border-top: none;
+    box-shadow: none;
+    float: right;
+    width: 3rem;
+}
+
+.toggle-filter, .toggle-filter:hover, .toggle-filter:enabled { /*ENABLED IS IMPORTANT*/
+    outline: none;
+}
