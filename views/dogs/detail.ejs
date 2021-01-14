@@ -10,7 +10,7 @@
         <div class="d-flex flex-column align-items-center">
             <img src="/static/images/dogs/<%= dog.imageName %>" class="dog-image mb-4">
             <div class="update-links">
-                <% if ((user && user.id == dog.poster) || (user && user.role === 'Admin')) { %>
+                <% if ((user && user.id == dog.poster.id) || (user && user.role === 'Admin')) { %>
                     <a href="/dogs/update/<%= dog.id %>" class="btn btn-primary submit-button edit-link">Edit</a>
                     <a href="/dogs/delete/<%= dog.id %>" class="btn btn-danger delete-link">Delete</a>
                 <% } %>

@@ -74,7 +74,7 @@ DogSchema.pre('findOneAndDelete', async function(done) {
         const dog = await mongoose.model('Dog').findById(dogId);
         await mongoose.model('Breed').findByIdAndUpdate(dog.breed, { $pull: { dogs: dog.id } });
         dog.comments.forEach(async comment => {
-            await mongoose.model('User').findByIdAndUpdate(dog.poster, { $pull: { comments_posted: comment } });
+            //await mongoose.model('User').findOneAndUpdate({ comments_posted: { $in: comment } }, { $pull: { comments_posted: comment } });
             await mongoose.model('Comment').findByIdAndDelete(comment);
         });
         await mongoose.model('User').findByIdAndUpdate(dog.poster, { $pull: { dogs_posted: dog.id } });

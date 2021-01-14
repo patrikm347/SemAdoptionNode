@@ -2,7 +2,7 @@ const user = require("../models/user");
 
 const isUserPosterOrAdmin = (req, res, next) => {
     const dogId = req.params.id;
-    if (req.user.id === dogId || req.user.role === 'Admin') {
+    if (req.user.dogs_posted.includes(dogId) || req.user.role === 'Admin') {
         return next();
     }
 

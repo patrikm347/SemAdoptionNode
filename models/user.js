@@ -95,7 +95,7 @@ UserSchema.pre('findOneAndDelete', async function(done) {
             await mongoose.model('Dog').findByIdAndDelete(dog);
         });
         user.comments_posted.forEach(async comment => {
-            await mongoose.model('Dog').findById({ comment: { $in: comments } }, { $pull: { comments: comment } });
+            //await mongoose.model('Dog').findOneAndUpdate({ comments: { $in: comment } }, { $pull: { comments: comment } });
             await mongoose.model('Comment').findByIdAndDelete(comment);
         });
     } catch (err) {

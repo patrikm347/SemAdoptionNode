@@ -1,4 +1,6 @@
 const Comment = require('../models/comment');
+const { User } = require('../models/user');
+const { Dog } = require('../models/dog');
 
 const getDogComments = async (req, res) => {
     try {
@@ -22,6 +24,9 @@ const postDogComment = async (req, res) => {
     try {
         const comment = await newComment.save();
         await comment.populate({ path: 'commenter', select: [ 'firstName', 'lastName' ] }).execPopulate();
+
+        await User.findByIdAndUpdate(req.user.id, { $push: { comments_posted: comment.id } });
+        await Dog.findByIdAndUpdate(req.params.id, { $push: { comments: comment.id } });
 
         res.json(comment);
     } catch (err) {
