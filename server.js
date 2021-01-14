@@ -65,4 +65,6 @@ app.use('/dogs', dogsRouter);
 app.use('/comments', commentsRouter);
 app.use('/admin', adminRouter);
 
+app.get('*', (req, res) => res.render('page404'));
+
 app.listen(process.env.PORT || 3000, _ => console.log(`Open on port ${process.env.PORT}`));

@@ -26,5 +26,5 @@ const getDogs = async (req, res) => {
 }
 
 module.exports = {
-    getDogs
+    getDogs,
 }
