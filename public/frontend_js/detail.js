@@ -7,10 +7,12 @@ const noComments = document.createElement('h4');
 function createComment(commentData) {
     const comment = document.createElement('div');
     const commentText = document.createElement('p');
-    const commenter = document.createElement('h4');
+    const commenter = document.createElement('a');
 
     comment.classList.add('comment');
     commenter.innerText = `${commentData.commenter.firstName} ${commentData.commenter.lastName}`;
+    commenter.href = `/users/profile/${commentData.commenter._id}`;
+    commenter.style.fontSize = '1.5rem';
     commentText.innerText = commentData.text;
 
     comment.appendChild(commenter);
@@ -60,6 +62,6 @@ commentForm.addEventListener('submit', function(event) {
     .catch(err => console.log('There has been error while posting comment ' + err));
 });
 
-if (commentsDiv.dataset.isAuthenticated == 'false') {
+if (commentsDiv.dataset.isAuthenticated == 'false') { //isAuthenticated is a string
     commentForm.style.display = 'none';
 }

@@ -21,7 +21,24 @@ const deleteUser = async (req, res) => {
     res.redirect('/admin');
 }
 
+const postBreed = async (req, res) => {
+    try {
+        const breed = new Breed({ name: req.body.breedName, originCountry: req.body.originCountry });
+        await breed.save();
+    } catch (err) {
+        console.log('Could not save new breed');
+    }
+
+    res.redirect('/admin');
+}
+
+ /*const deleteBreed = async (req, res) => {
+
+ }*/
+
 module.exports = {
     getAdminData,
-    deleteUser
+    deleteUser,
+    postBreed,
+    //deleteBreed
 }

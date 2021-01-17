@@ -6,3 +6,12 @@
 tr:nth-child(even) {
     background-color: rgb(248, 248, 248);
 }
+
+.forms {
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgb(186, 188, 194);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+}
