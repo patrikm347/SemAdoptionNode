@@ -15,7 +15,7 @@
     text-decoration: none;
 }
 
-.submit-button, .cancel-button {
+/*.submit-button, .cancel-button {
     background-color: rgb(75, 170, 233);
     border: 1px solid rgb(75, 170, 233);
 }
@@ -23,7 +23,7 @@
 .submit-button:hover, .cancel-button:hover {
     background-color: rgb(42, 131, 190);
     border: 1px solid rgb(42, 131, 190);
-}
+}*/
 
 .validation-error {
     color: red;

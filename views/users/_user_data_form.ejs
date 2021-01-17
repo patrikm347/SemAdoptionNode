@@ -32,6 +32,7 @@
 <div class="form-group">
     <label for="gender">Gender: </label><br>
     <select class="form-control mb-3" id="gender" name="gender" required>
+        <option value="" disabled>Choose</option>
         <% if (newUser.gender === 'Female') { %>
             <option>Male</option>
             <option selected>Female</option>

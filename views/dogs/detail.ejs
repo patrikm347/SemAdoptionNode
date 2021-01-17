@@ -8,7 +8,7 @@
     <%- include('../partials/header') %>
     <div class="container">
         <div class="d-flex flex-column align-items-center">
-            <img src="/static/images/dogs/<%= dog.imageName %>" class="dog-image mb-4">
+            <img src="/static/images/dogs/<%= dog.imageName %>" alt="Dog <%= dog.name %>" class="dog-image mb-4">
             <div class="update-links">
                 <% if ((user && user.id == dog.poster.id) || (user && user.role === 'Admin')) { %>
                     <a href="/dogs/update/<%= dog.id %>" class="btn btn-primary submit-button edit-link">Edit</a>
@@ -37,7 +37,7 @@
             <h3 class="comments-title" id="commentsTitle">Comments</h3>
             <div class="comments w-100" id="comments" data-is-authenticated="<%= isAuthenticated %>">
                 <div class="comment-form">
-                    <form action="" method="POST" id="commentForm" enctype="multipart/form-data">
+                    <form action="/dog/<%= dog.id %>" method="POST" id="commentForm" enctype="multipart/form-data">
                         <textarea class="form-control comment-area" name="comment" placeholder="Write your comment..." rows="4" required id="commentArea"></textarea>
                         <button type="submit" class="btn btn-primary submit-button mt-3" id="commentButton">Comment</button>
                     </form>

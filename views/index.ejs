@@ -18,7 +18,7 @@
             <% dogs.forEach(dog => { %>
                 <div class="col-md-5 mb-4 mt-4">
                     <div class="dog-data">
-                        <img src="/static/images/dogs/<%= dog.imageName %>" class="dog-image"></img>
+                        <img src="/static/images/dogs/<%= dog.imageName %>" alt="Dog <%= dog.name %>" class="dog-image">
                     </div>
                     <div class="dog-card">
                         <a href="/dogs/dog/<%= dog.id %>" class="dog-link"><%= dog.name %>, <%= dog.age %></a>
